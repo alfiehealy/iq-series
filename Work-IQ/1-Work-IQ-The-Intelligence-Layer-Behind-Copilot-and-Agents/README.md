@@ -2,7 +2,7 @@
 
 [![Episode 1 video](../../images/work-iq/ep1.png)](https://aka.ms/iq-series/work-iq/episode1)
 
-📅 **June 2, 2026 at 9 AM PT** | 📺 [Watch the session](https://aka.ms/iq-series/work-iq/episode1) | 📂 [Try the cookbook](./cookbook/)
+📅 **June 2, 2026 at 9 AM PT** | 📺 [Watch the session](https://aka.ms/iq-series/work-iq/episode1) | 📂 [Try the lab](./lab/)
 
 
 ## 🎥 Session Summary
@@ -27,7 +27,7 @@ A visual summary of key takeaways by Tomomi Imura, showing what Work IQ is and h
 
 ## � Try the Cookbook
 
-Ready to get hands-on? Head to the [Episode 1 Cookbook](./cookbook/) for prerequisites, deployment instructions, and a step-by-step Jupyter notebook.
+Ready to get hands-on? Head to the [Episode 1 lab](./lab/) for prerequisites, deployment instructions, and a step-by-step guidance.
 
 ## 🔗 Learn More
 
