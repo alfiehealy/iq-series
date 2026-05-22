@@ -1,5 +1,20 @@
 # Lab 02: A2A for Context‑Aware, Agentic Experiences
 
+## Understanding A2A
+
+A2A (Agent2Agent) is an open protocol that gives AI agents a common language to discover each other, exchange messages, and collaborate across different frameworks and vendors. Instead of treating another agent like a simple tool call, A2A allows true agent-to-agent interaction, including multi-turn conversations, delegation, and bidirectional workflows.
+
+In practice, the flow is: discover an agent through its agent card, authenticate, send a request, and optionally stream task updates/results for long-running work. A2A is designed to be secure and enterprise-ready (HTTPS, standard auth patterns, opaque execution), while supporting rich modalities beyond plain text.
+
+A2A and MCP are complementary:
+
+- MCP standardizes how an agent connects to tools, APIs, and data sources (agent-to-tool).
+- A2A standardizes how agents communicate with other agents (agent-to-agent).
+
+Think of MCP as how an agent uses capabilities, and A2A as how agents collaborate with each other to solve more complex end-to-end tasks.
+
+In this lab you are going to learn how to leverage Work IQ via A2A.
+
 ## Start Work IQ CLI in A2A Server mode
 
 You can run the following scripts directly from a terminal session, for example using the PowerShell terminal or the Bash terminal, depending on the platform where you are running this cookbook.
@@ -20,7 +35,7 @@ You can see a message informing you that the "Work IQ A2A Server started at http
 There is also a message like "Agent card available at: http://localhost:5100/.well-known/agent-card.json".
 Copy the URL of the agent card into your clipboard.
 
-# Consume Work IQ via A2A
+## Consume Work IQ via A2A
 
 Check that the A2A Inspector tool is up and running, accordingly to the prerequisites described in the [Episode 2 README](../README.md).
 Open a browser and navigate to the URL of the A2A Inspector. The A2A Inspector URL should be [http://127.0.0.1:5001](http://127.0.0.1:5001) when running A2A Inspector locally, or [http://127.0.0.1:8080](http://127.0.0.1:8080) when running it from a Docker container.
@@ -86,11 +101,11 @@ The agent card looks like the following JSON.
 
 The agent card document describes the A2A server and provides the following information:
 
-- Identity: name, description, and version of the agent
-- Service Endpoint: the URL of the agent endpoint as well as the protocol type and version supported by the remote agent 
-- A2A Capabilities: the list of supported A2A features like streaming, state transition history, etc.
-- Authentication: the authentication requirements to consume the agent
-- Skills: what the agent can do for you as well as what kind of media types the agent supports like natural language, typed responses, etc.
+- **Identity**: name, description, and version of the agent
+- **Service Endpoint**: the URL of the agent endpoint as well as the protocol type and version supported by the remote agent 
+- **A2A Capabilities**: the list of supported A2A features like streaming, state transition history, etc.
+- **Authentication**: the authentication requirements to consume the agent
+- **Skills**: what the agent can do for you as well as what kind of media types the agent supports like natural language, typed responses, etc.
 
 Now scroll down in the A2A Inspector page and type the following prompt in the last textbox of the page and select the **Send** command to send the prompt to the target agent. 
 

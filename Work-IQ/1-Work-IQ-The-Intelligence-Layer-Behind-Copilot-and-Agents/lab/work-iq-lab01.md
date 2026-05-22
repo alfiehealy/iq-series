@@ -1,6 +1,53 @@
 # Lab 01: The Intelligence Layer Behind Copilot & Agents
 
-## Start Work IQ CLI
+In this lab you are going to experiment how to use Work IQ to consume the intelligence of Microsoft 365 Copilot.
+
+## Understanding Work IQ
+
+All of us have data spread across Microsoft 365, Dataverse, and many line-of-business (LOB) systems.
+LLMs can use that data to generate answers and reasoning, but by themselves they do not understand who you are, how your organization works, or what matters most to your projects.
+
+In Microsoft 365, your day-to-day activity creates valuable context: meetings, emails, Teams conversations, and interactions with Microsoft 365 Copilot.
+Copilot can already use that context to understand your preferences, your working style, and how you want responses to be delivered.
+
+On top of this foundation, skills and tools enable agents to provide more relevant answers and perform actions in ways that match your habits and expectations.
+This is Work IQ: the intelligence layer that personalizes Copilot for you and your organization.
+
+![The architecture of Work IQ with Data, Context, and Skills & Tools](../../../images/work-iq/WorkIQ-Architecture.png)
+
+From an architectural perspective, Work IQ consists of:
+- **Data**: Combines everyday work signals with external enterprise data, including Microsoft 365 activity and LOB systems, to give Copilot real-time awareness.
+- **Context**: Uses memory to learn your style, preferences, habits, and workflows, so it can understand your patterns over time.
+- **Skills & Tools**: Provides specialized capabilities and instructions that tailor Copilot and agents for specific tasks and outcomes.
+
+## Understanding Work IQ API
+
+Work IQ API is the common API layer that exposes Microsoft organizational intelligence to developers, partners, and enterprise applications.
+
+At a high level, the platform follows three core principles:
+
+- **Unified Surface**: One API contract supports all use cases, whether they are driven by people or by agents.
+- **Response Fidelity**: API responses mirror the interactive experience, including reasoning quality, data grounding, formatting, and capabilities.
+- **Multi-Protocol Runtime**: REST, A2A, and MCP are different protocol heads on the same runtime orchestration layer.
+
+From a security and compliance perspective, Work IQ is designed to operate safely by default:
+
+- Information is always security-trimmed.
+- Access is delegated and always scoped to user context.
+- Users need a valid Microsoft 365 Copilot license (with PAYG support expected).
+- Requests always honor tenant boundaries, sensitivity labels, and governance policies.
+
+When choosing a protocol, use the pattern that matches your scenario:
+
+- **A2A (Agent-to-Agent)**: Use when one agent delegates tasks to another agent, for example when an external HR agent requests Microsoft 365 context from a BizChat agent.
+- **MCP (Agent-to-Tool)**: Use when an orchestrator agent, such as GitHub Copilot, needs organization context and calls BizChat through Work IQ as a tool.
+- **REST (Human-to-Agent)**: Use when building intelligence into a web or mobile application via API, where an app asks questions and receives responses from an agent or BizChat.
+
+In practice, these options are complementary. You can combine them in larger multi-agent orchestrations while preserving a consistent intelligence layer and policy model.
+
+## Consuming Work IQ
+
+### Start Work IQ CLI
 
 You can run the following scripts directly from a terminal session, for example using the PowerShell terminal or the Bash terminal, depending on the platform where you are running this cookbook.
 
@@ -27,7 +74,7 @@ Work IQ CLI will give you back detailed information about your next and upcoming
 
 ---
 
-## Use Work IQ in GitHub Copilot CLI
+### Use Work IQ in GitHub Copilot CLI
 
 You can now run Work IQ inside GitHub Copilot CLI via MCP protocol.
 
@@ -59,11 +106,11 @@ GitHub Copilot CLI will still rely on Work IQ MCP to give you back detailed info
 
 ---
 
-## Use Work IQ via REST
+### Use Work IQ via REST
 
 Another option you have, is to consume Work IQ via REST API. In order to try this option, you are going to use the Microsoft Graph Explorer web interface.
 
-### Create a new Copilot Chat Conversation
+#### Create a new Copilot Chat Conversation
 
 - Open [Graph Explorer](https://aka.ms/ge)  
 - Sign into your target tenant
@@ -96,6 +143,9 @@ Content-Type: application/json
 
 Copy the value of the **id** attribute. It represents the unique **conversationId** of your Copilot Chat conversation.
 
+#### Send a Chat Message within the current Conversation
+
+- Still in the user experience of [Graph Explorer](https://aka.ms/ge) 
 - Paste the query below and replace the {conversationId} placeholder with the value you just copied
 - Click **Run query**
 
@@ -119,11 +169,7 @@ Content-Type: application/json
 
 ## Wrap up
 
-As you can see, regardless if you use the Work IQ CLI, Work IQ MCP tools, or low level REST API request you will always get back a consistent response, because Work IQ guarantees you:
-
-- **Unified surface**: One API contract for all use cases (human and agents)
-- **Response Fidelity**: API responses mirror interactive UI responses. Same reasoning, same data grounding, same formatting, same capabilities.
-- **Multi-Protocol**: Multiple protocol heads (REST, A2A, MCP) sitting on a common runtime. Each protocol optimized for its use case; all share the same underlying orchestration.
+As you can see, regardless if you use the Work IQ CLI, Work IQ A2A, Work IQ MCP tools, or low level REST API request you will always get back a consistent response.
 
 ## Where to go next
 

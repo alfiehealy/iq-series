@@ -16,7 +16,7 @@ Together, these IQs enable AI agents to reason, retrieve, and act with deep busi
 
 📺 Foundry IQ episodes premiere **every Wednesday at 9 AM PT**, starting **March 18, 2026** on [Microsoft Developer YouTube](https://aka.ms/iq-series/episodes).
 
-📺 Foundry IQ episodes premiere **9 AM PT on June 2, 2026** on [Microsoft Developer YouTube](https://aka.ms/iq-series/episodes).
+📺 Work IQ episodes premiere **9 AM PT on June 2, 2026** on [Microsoft Developer YouTube](https://aka.ms/iq-series/episodes).
 
 ## 📚 Episodes
 
@@ -57,10 +57,7 @@ Completed all three Foundry IQ cookbooks? You can now request your community bad
 
 Completed all three Work IQ labs? You can now request your community badge.
 
-1. Fork this repo and save your lab outputs as screenshot for each episode. Here are the screenshots that we need from you:
-   - Lab 01: Anonymized output of the REST API request in Graph Explorer
-   - Lab 02: A screenshot of the A2A inspector with anonymized data
-   - Lab 03: A screenshot of the home page of the vibe-coded prototype solution
+1. Fork this repo and save your lab outputs as screenshot for each episode. Details about the required screenshots are provided in the following badge request issue form
 1. Submit a [badge request issue](https://github.com/microsoft/iq-series/issues/new?template=work-iq-badge-request.yml)
 1. Complete the required [badge form](https://aka.ms/iq-series/badge-form)
 

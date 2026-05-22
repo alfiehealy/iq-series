@@ -1,5 +1,36 @@
 # Lab 03: Tooling with MCP & Copilot CLI
 
+## Understanding MCP in Work IQ
+
+Model Context Protocol (MCP) is an open standard that lets AI clients connect to external tools, data sources, and workflows in a consistent way. A useful analogy is USB-C for AI: one common protocol, many compatible integrations.
+
+In practice, MCP enables clients like GitHub Copilot to discover and call capabilities exposed by MCP servers (for example, Work IQ tools). Instead of building custom integrations for each client and each tool, MCP provides a shared contract that makes integrations easier to build, reuse, and scale.
+
+For this lab, MCP is the bridge between GitHub Copilot CLI (the client) and Work IQ (the MCP server), so Copilot can securely invoke workplace intelligence tools when you approve it.
+
+## Understanding Work IQ CLI and GitHub Copilot CLI
+
+Work IQ CLI and GitHub Copilot CLI complement each other:
+
+- **Work IQ CLI**
+    - Independent CLI tool
+    - Plugin for GitHub Copilot CLI
+    - Exposes MCP servers, skills, and tools
+    - Connects AI assistants to your Microsoft 365 data and insights
+
+- **GitHub Copilot CLI**
+    - Conversational AI assistant that runs directly in your terminal
+    - Helps answer questions, write/debug code, and automate local or GitHub tasks
+    - Supports interactive and prompt-based usage (`copilot` or `copilot -p ...`)
+    - Keeps conversation context across follow-up prompts for iterative workflows
+
+In this lab, GitHub Copilot CLI is the agent interface, and Work IQ CLI is the MCP-powered bridge to workplace intelligence. Together, they let you use natural language in the terminal while securely invoking Work IQ tools when approved.
+
+Learn more:
+- [GitHub Copilot CLI for Beginners](https://github.com/github/copilot-cli-for-beginners)
+- [Microsoft Work IQ CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq-cli)
+
+In this lab you are going to leverage both of the tools to accomplish real-life complex tasks.
 
 ## Advanced Scenarios with Work IQ in GitHub Copilot CLI
 
